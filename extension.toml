@@ -1,7 +1,7 @@
 id = "silverstripe"
 name = "SilverStripe"
 description = "SilverStripe template support with syntax highlighting, completions, and go-to-definition"
-version = "0.1.0"
+version = "0.1.1"
 schema_version = 1
 authors = ["Nicolas Cusan"]
 repository = "https://github.com/nicolas-cusan/zed-silverstripe"

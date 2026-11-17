@@ -48,9 +48,14 @@ impl zed::Extension for SilverStripeExtension {
             ));
         }
 
+        // Zed runs the server from the project folder, so pass an absolute path.
+        let server_path = std::env::current_dir()
+            .map_err(|e| e.to_string())?
+            .join(SERVER_PATH);
+
         Ok(zed::Command {
             command: zed::node_binary_path()?,
-            args: vec![SERVER_PATH.to_string(), "--stdio".to_string()],
+            args: vec![server_path.to_string_lossy().into_owned(), "--stdio".to_string()],
             env: Default::default(),
         })
     }
